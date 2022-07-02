@@ -5,63 +5,31 @@ let petsalon = {
         'Open: 9:00am',
         'Close: 5:00pm'
     ],
-    pets: [
-        {
-            petName: "Bowser",
-            age: "1",
-            gender: "male",
-            service: "Nail Trim",
-            owner: "Abby",
-            ownerPhone: "267-335-1222"
-        },
-        {
-            petName: "Moose",
-            age: "2",
-            gender: "male",
-            service: "Deshedding",
-            owner: "Megan",
-            ownerPhone: "267-335-2335"
-        },
-        {
-            petName: "Harley",
-            age: "8",
-            gender: "female",
-            service: "Vaccine",
-            owner: "Trish",
-            ownerPhone: "267-335-2261"
-        },
-        {
-            petName: "Remington",
-            age: "5",
-            gender: "male",
-            service: "Grooming",
-            owner: "Trish",
-            ownerPhone: "267-335-2261"
-        },
-        {
-            petName: "Daisy",
-            age: "6",
-            gender: "Female",
-            service: "Nail Trim",
-            owner: "Ashley",
-            ownerPhone: "267-335-7761"
-        }
-    ]
-    
+    pets: []
 }
+
+/* function address_input(){
+    let address = document.getElementById("index-header");
+
+    address.innerHTML = `
+    <p>${petsalon.address}</p>
+    <p>${petsalon.phoneNumber}</p>
+    <p>${petsalon.hours[0]} until ${petsalon.hours[1]}
+    `
+} */
 
 //set up the count and display functions
-let numberofpets=0;
+function numberofpets(){
+    let petNumber=0;
 for(i=0; i<petsalon.pets.length; i++){
-    console.log(petsalon.pets[i].petName);
-    numberofpets++
+    petNumber++
 }
-//alert(numberofpets);
+    let insertpetnumber = document.getElementById("countingpets");
+    insertpetnumber.innerHTML = petNumber;
+}
 
-
-
-//trying to make a function for an object
-function newpets(name, breed, age, owner, ownerPhone, service){
+//make a function for an object
+function Newpets(name, breed, age, owner, ownerPhone, service){
     this.name = name;
     this.breed = breed;
     this.age = age;
@@ -70,4 +38,49 @@ function newpets(name, breed, age, owner, ownerPhone, service){
     this.service = service;
 }
 
-const firstpet = new newpets('Lucky', 'Mutt', '20', 'Susan', '267-335-5783', 'Grooming');
+function register(){
+    let petName = document.getElementById('petName').value;
+    let petBreed = document.getElementById("petBreed").value;
+    let petAge = document.getElementById("petAge").value;
+    let ownerName = document.getElementById("ownerName").value;
+    let ownerNumber = document.getElementById("ownerNumber").value;
+    let service = document.getElementById("inputGroupSelect04").value;
+
+    let addpet = new Newpets(petName, petBreed, petAge, ownerName, ownerNumber, service);
+    petsalon.pets.push(addpet);
+
+    numberofpets();
+    clearInputs();
+    console.log(petsalon.pets)
+}
+
+function clearInputs(){
+    document.getElementById('petName').value="";
+    document.getElementById('petBreed').value="";
+    document.getElementById('petAge').value="";
+    document.getElementById('ownerName').value="";
+    document.getElementById('ownerNumber').value="";
+    document.getElementById('inputGroupSelect04').value="Choose Service...";
+}
+
+function init(){
+    //create the objects
+    let scooby = new Newpets('Scooby', 'Dane', 3, 'Shaggy', '777-267-7777', 'Nailtrim');
+    let bingo = new Newpets('Bingo', 'Dalmation', 5, 'Rachel', '777-121-6677', 'Grooming');
+    let fido = new Newpets('fido', 'Shepherd', 8, 'Emily', "777-222-1287", "Vaccines");
+
+    petsalon.pets.push(scooby, bingo, fido);
+    //calling the function
+    numberofpets();
+    console.log(petsalon.pets)
+    //hook events
+}
+
+function searchbar(){
+    dogname = document.getElementById("search-name").value;
+    console.log(dogname);
+}
+
+
+//makes it so the html loads fully before calling the functions
+window.onload=init;

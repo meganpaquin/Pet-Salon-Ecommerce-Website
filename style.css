@@ -16,6 +16,68 @@ h1{
     margin: 50px 0 0 30px;
     padding: 100px 0 0 30px;
 }
+
+.input-group-text{
+    width: 200px;
+    font-family: 'open-sans';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-control{
+    font-family: 'open-sans';
+    font-size: 20px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.input-group{
+    margin-bottom: 20px;
+    width: 600px;
+}
+
+.btn-outline-secondary:hover{
+    background-color: green;
+    font-weight: bold;
+    color: black;
+}
+
+.form-select option{
+    font-family: 'open-sans'!important;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+#register-main{
+    width: 100%;
+    margin: 80px 0 50px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+#register-heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0 10px 80px;
+}
+
+#register-heading h1, p{
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+
+#register-heading p{
+    margin: 40px 80px 0 0;
+    font-size: 18px;
+    font-family: 'open-sans',Arial, Helvetica, sans-serif;
+    
+}
+
+.container{
+    justify-content: center;
+    width: 620px;
+}
 }
 
 @media screen and (max-width:850px){
@@ -47,5 +109,46 @@ h1{
         margin: 50px 0 0 10px;
         padding: 120px 0 0 5px;
     }
-}
 
+    .input-group-text{
+        width: 150px;
+        font-family: 'open-sans';
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+    .form-control{
+        font-family: 'open-sans';
+        font-size: 20px;
+        font-weight: normal;
+        font-style: italic;
+    }
+    
+    .input-group{
+        margin-bottom: 20px;
+        width: 400px;
+    }
+    
+    .btn-outline-secondary:hover{
+        background-color: green;
+        font-weight: bold;
+        color: black;
+    }
+    .form-select option, .form-select[selected]{
+        font-family: 'open-sans'!important;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    #register-main{
+        width: 100%;
+        margin: 80px 0 50px 0px;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .container{
+        justify-content: center;
+        width: 420px;
+    }
+}
