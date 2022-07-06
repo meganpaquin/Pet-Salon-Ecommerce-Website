@@ -2,11 +2,15 @@ let petsalon = {
     address: "2418 Franklin BLVD, San Francisco, CA 90210",
     phoneNumber: "267-335-1256",
     hours: [
-        'Open: 9:00am',
-        'Close: 5:00pm'
+        '9:00am',
+        '5:00pm'
     ],
     pets: []
 }
+
+let hours = document.getElementById("index-header");
+    hours.innerHTML = `<h2>We are open from ${petsalon.hours[0]} - ${petsalon.hours[1]}</h2>`;
+    
 
 /* function address_input(){
     let address = document.getElementById("index-header");
