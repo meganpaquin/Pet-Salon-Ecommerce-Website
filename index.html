@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-<body>
+<body onload="index_loadup()">
    <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">Home</a>
@@ -89,10 +89,8 @@
                 </div> 
             </div>
           </div>
-        </div>
 
-        <div class="row justify-content-evenly">
-          <div class="col-4">
+          <div class="col">
             <div class="card" style="width: 18rem;">
                 <img src="pictures/vaccines.jpg" class="card-img-top" alt="dog next to a vaccine">
                 <div class="card-body">
@@ -110,7 +108,7 @@
             </div>
           </div>
 
-          <div class="col-4">
+          <div class="col">
             <div class="card" style="width: 18rem;">
               <img src="pictures/ears.jpg" class="card-img-top" alt="dog holding nail clippers in mouth">
               <div class="card-body">
@@ -127,8 +125,16 @@
               </div> 
             </div>
           </div>
+
+          <div class="col">
+            <div id="the-last-card" class="card" style="width: 18rem;">
+            </div>
+          </div>
         </div>
-  
+
+        
+          
+         
 
     </main>
     <footer>

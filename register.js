@@ -8,8 +8,10 @@ let petsalon = {
     pets: []
 }
 
-let hours = document.getElementById("index-header");
+function index_loadup(){
+    let hours = document.getElementById("index-header");
     hours.innerHTML = `<h2>We are open from ${petsalon.hours[0]} - ${petsalon.hours[1]}</h2>`;
+}
     
 
 /* function address_input(){
@@ -87,4 +89,6 @@ function searchbar(){
 
 
 //makes it so the html loads fully before calling the functions
-window.onload=init;
+//instead of using this embedded the function load into the body tag... this removes the error of running JS on mmultiple pages!
+//window.onload=init;
+
