@@ -44,6 +44,7 @@ function Newpets(name, breed, age, owner, ownerPhone, service){
     this.service = service;
 }
 
+
 function register(){
     let petName = document.getElementById('petName').value;
     let petBreed = document.getElementById("petBreed").value;
@@ -52,11 +53,17 @@ function register(){
     let ownerNumber = document.getElementById("ownerNumber").value;
     let service = document.getElementById("inputGroupSelect04").value;
 
-    let addpet = new Newpets(petName, petBreed, petAge, ownerName, ownerNumber, service);
-    petsalon.pets.push(addpet);
+        if(petName=="" || petBreed=="" || petAge=="" || ownerName=="" || ownerNumber=="" || service==""){
+            alert("Please enter a value");
+        }else{
+            let addpet = new Newpets(petName, petBreed, petAge, ownerName, ownerNumber, service);
+            petsalon.pets.push(addpet);
+        }
 
     numberofpets();
     clearInputs();
+    displayCardPets();
+    displaytablePets();
     console.log(petsalon.pets)
 }
 
@@ -78,6 +85,8 @@ function init(){
     petsalon.pets.push(scooby, bingo, fido);
     //calling the function
     numberofpets();
+    displayCardPets();
+    displaytablePets();
     console.log(petsalon.pets)
     //hook events
 }
