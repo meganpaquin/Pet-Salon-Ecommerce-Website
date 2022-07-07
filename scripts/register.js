@@ -62,7 +62,7 @@ function register(){
 
     numberofpets();
     clearInputs();
-    displayCardPets();
+    //displayCardPets();
     displaytablePets();
     console.log(petsalon.pets)
 }
@@ -85,7 +85,7 @@ function init(){
     petsalon.pets.push(scooby, bingo, fido);
     //calling the function
     numberofpets();
-    displayCardPets();
+    //displayCardPets();
     displaytablePets();
     console.log(petsalon.pets)
     //hook events
