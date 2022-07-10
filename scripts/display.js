@@ -1,19 +1,10 @@
 let i;
 let j;
 
-function displayCardPets(){
-    //travel the array
-    let card="";
-    for(i=0; i<petsalon.pets.length; i++){
-        let displayname = petsalon.pets[i].name;
-        let displaybreed = petsalon.pets[i].breed;
-        let displayage = petsalon.pets[i].age;
-        let displayservice = petsalon.pets[i].service;
-    
 
-    //create the card
-    card +=`
-        <div class="col">
+/* card +=`
+        <div class="modal-body">
+        <div id="${petsalon.pets[i].id}" class="col">
             <div class="card" style="width: 18rem;">
             <img src="pictures/dog_registration.jpg" class="card-img-top" alt="dog holding bone in mouth">
             <ul class="list-group list-group-flush">
@@ -34,15 +25,13 @@ function displayCardPets(){
                     <li class="bold-name list-group-item">Pet Service</li>
                     <li class="list-group-item">${displayservice}</li>
                 </ul>
+                <div class="card-body">
+                    <button class="btn btn-danger" onclick="deletePet(${petsalon.pets[i].id})">Delete</button></li>
+                </div>
             </ul>
             </div>
-        </div>`
-    }
-
-    //inject the card into the HTML
-    let insertpoint = document.getElementById("registration-list");
-    insertpoint.innerHTML=card;
-}
+        </div>
+        </div>` */
 
 
 
@@ -57,10 +46,11 @@ function displaytablePets(){
         let ownername = petsalon.pets[j].owner;
         let displayservice = petsalon.pets[j].service;
         let number = j+1;
+        let time = petsalon.pets[j].time;
 
         //create the table
         petTable+= `
-        <tr>
+        <tr id="${petsalon.pets[j].id}">
             <td></td>
             <td>${number}</td>
             <td>${displayname}</td>
@@ -68,6 +58,8 @@ function displaytablePets(){
             <td>${displayage}</td>
             <td>${ownername}</td>
             <td>${displayservice}</td>
+            <td>${time}</td>
+            <td><button class="btn btn-danger" onclick="deletePetList(${petsalon.pets[j].id})">Delete</button></td>
         </tr>
         `
         }
@@ -82,6 +74,8 @@ function displaytablePets(){
         <td>Pet Age</td>
         <td>Owner Name</td>
         <td>Service</td>
+        <td>Scheduled</td>
+        <td></td>
       </th>`
     insertpoint.innerHTML=table_header+petTable;
 }

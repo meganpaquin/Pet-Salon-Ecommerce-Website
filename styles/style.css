@@ -112,17 +112,30 @@
         border: none;
     }
 
-    .list-group-item{
-        width: 9rem;
-    }
-
     .bold-name{
         font-weight: bold;
+    }
+
+    .card{
+        height: 650px;
     }
 
     .table{
         width: 100%;
         margin: 20px auto auto auto;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: black;
+    }
+
+    footer p i, footer p{
+        margin: 10px;
+        font-size: 20px;
+        color: white;
     }
 }
 

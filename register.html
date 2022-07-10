@@ -15,18 +15,18 @@
     
 </head>
 <body onload="init()">
-    <nav class="navbar navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">Home</a>
-          <a class="navbar-brand" href="about.html">About</a>
-          <a class="navbar-brand" href="register.html">Register</a>
-          <a class="navbar-brand">Admin</a>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
-    </nav>
+  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Home</a>
+      <a class="navbar-brand" href="register.html">Register</a>
+      <a class="navbar-brand" href="about.html">About</a>
+      <a class="navbar-brand" id="admin">Admin</a>
+      <div class="d-flex" role="search">
+        <input id="search-name" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" onclick="searchbar()">Search</button>
+      </div>
+    </div>
+</nav>
 
     <main id="register-main">
       <div id="register-heading">
@@ -56,6 +56,23 @@
           <textarea class="form-control" aria-label="With textarea" id="ownerNumber"></textarea>
         </div>
         <div class="input-group">
+          <select class="form-select" id="inputGroupSelect05" aria-label="Example select with button addon">
+            <option>Choose Date...</option>
+            <option value="Monday 10am">Monday 10am</option>
+            <option value="Monday 11am">Monday 11am</option>
+            <option value="Monday 12am">Monday 12am</option>
+            <option value="Tuesday 10am">Tuesday 10am</option>
+            <option value="Tuesday 11am">Tuesday 11am</option>
+            <option value="Tuesday 12am">Tuesday 12am</option>
+            <option value="Tuesday 1pm">Tuesday 1pm</option>
+            <option value="Tuesday 2pm">Tuesday 2pm</option>
+            <option value="Wednesday 11am">Wednesday 11am</option>
+            <option value="Wednesday 12am">Wednesday 12am</option>
+            <option value="Wednesday 1pm">Wednesday 1pm</option>
+            <option value="Wednesday 2pm">Wednesday 2pm</option>
+          </select>
+        </div>
+        <div class="input-group">
           <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
             <option>Choose Service...</option>
             <option value="Nail Trim">Nail Trim</option>
@@ -67,7 +84,6 @@
           <button class="btn btn-outline-secondary" type="button" onclick="register();">Register!</button>
         </div>
       </div>
-
   
     <div class="row align-items-center" id="registration-list">
     </div>
