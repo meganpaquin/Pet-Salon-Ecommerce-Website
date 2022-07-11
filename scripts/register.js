@@ -64,7 +64,6 @@ function register(){
 
     numberofpets();
     clearInputs();
-    //displayCardPets();
     displaytablePets();
     console.log(petsalon.pets)
 }
@@ -95,19 +94,23 @@ function deletePetList(id){
     numberofpets(); //update the number of pets
 }
 
-function init(){
+function createobjects(){
     //create the objects
     let scooby = new Newpets('Scooby', 'Dane', 3, 'Shaggy', '777-267-7777', 'Nailtrim', '12:00am Friday');
     let bingo = new Newpets('Bingo', 'Dalmation', 5, 'Rachel', '777-121-6677', 'Grooming', '3:00pm Thursday');
     let fido = new Newpets('Fido', 'Shepherd', 8, 'Emily', "777-222-1287", "Vaccines", '8:00am Monday');
+    let moose = new Newpets('Moose', 'Anatolian', 3, 'Megan', '802-888-1234', 'Bath', '9:00am Wednesday');
+    let remmy = new Newpets('Remington', 'Beagle', 9, 'Trish', '802-123-7761', 'Nail Trim', '6:00am Friday');
 
-    petsalon.pets.push(scooby, bingo, fido);
-    //calling the function
+    petsalon.pets.push(scooby, bingo, fido, moose, remmy);
+}
+
+function init(){
+    //calling the functions
+    createobjects();
     numberofpets();
-    //displayCardPets();
     displaytablePets();
     console.log(petsalon.pets)
-    //hook events
 }
 
 function searchbar(){
@@ -127,15 +130,35 @@ function searchbar(){
                 document.getElementById(i).classList.add("table-danger");
             }else{
                 document.getElementById(i).classList.remove("table-danger");
-            }    
-        }  
+            }  
+        } 
     }
     //clear the button value
     document.getElementById("search-name").value = "";
 }
 
-
-//makes it so the html loads fully before calling the functions
-//instead of using this embedded the function load into the body tag... this removes the error of running JS on mmultiple pages!
-//window.onload=init;
-
+function searchbarAbout(){
+    dogname = document.getElementById("search-name").value;
+    
+    for(let i=0; i<petsalon.pets.length; i++){
+        let pet=petsalon.pets[i];
+        //search by dog name
+        if(dogname.toLowerCase()==pet.name.toLowerCase()){
+            document.getElementById(i).classList.remove("invisible-card");
+            document.getElementById(i).classList.add("smaller-card");
+        }else{
+            document.getElementById(i).classList.remove("smaller-card");
+            document.getElementById(i).classList.add("invisible-card");
+           //Search by owner name
+            if(dogname.toLowerCase()==pet.owner.toLowerCase()){
+                document.getElementById(i).classList.remove("invisible-card");
+                document.getElementById(i).classList.add("smaller-card");
+            }else{
+                document.getElementById(i).classList.remove("smaller-card");
+                document.getElementById(i).classList.add("invisible-card");
+            }  
+        } 
+    }
+    //clear the button value
+    document.getElementById("search-name").value = "";
+}

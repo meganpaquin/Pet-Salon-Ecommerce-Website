@@ -63,7 +63,22 @@ footer{
     -webkit-box-shadow: 0 0 10px darkgrey;
         box-shadow: 0 0 10px darkgrey;
     margin: 20px 0 0 0;
-    height: 650px;
+    height: 670px;
+}
+
+.invisible-card{
+    display: none;
+}
+
+.smaller-card{
+    -webkit-box-shadow: 0 0 10px darkgrey;
+        box-shadow: 0 0 10px darkgrey;
+    margin: 60px 0 0 0;
+    height: 370px;
+}
+
+.invisible-btn{
+    border: none;
 }
 
 
@@ -151,6 +166,7 @@ footer{
 
     .navbar{
         width: 100%;
+        margin: 0;
     }
 
     .navbar-brand, .d-flex input, .d-flex button{
@@ -161,7 +177,7 @@ footer{
         width: 150px;
     }
 
-    #admin, #about{
+    #admin {
         display: none;
     }
 
@@ -180,7 +196,6 @@ footer{
         margin: 5px auto auto 25px;
     }
     
-    
     h1{
         font-family: 'open-sans';
         font-weight: 700;
@@ -195,6 +210,13 @@ footer{
         font-size: 16px;
         font-weight: bold;
     }
+
+    #h1-about{
+        margin: 60px 0 0 10px;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
     
     .input-group{
         margin-bottom: 20px;
@@ -203,14 +225,28 @@ footer{
     
     #register-main{
         width: 100%;
-        margin: 60px 0 50px 0px;
+        margin: 0 0 50px 0px;
         display: flex;
         flex-direction: column;
     }
 
+    .time-table, .owner-table{
+        display: none;
+    }
+
+    #pet-list-table{
+        margin: 20px auto auto auto;
+    }
+
     #register-heading h1, p{
-        margin: 20px auto 20px auto;
+        margin: 0 auto 10px auto;
+        padding: 0;
         text-align: center;
+    }
+
+    #register-heading{
+        margin: 60px auto auto auto;
+        padding: 0;
     }
     
     .container{
